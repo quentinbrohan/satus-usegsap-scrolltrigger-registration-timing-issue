@@ -1,13 +1,13 @@
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import type { Metadata, Viewport } from 'next'
 import { draftMode } from 'next/headers'
-import { VisualEditing } from 'next-sanity/visual-editing'
+// import { VisualEditing } from 'next-sanity/visual-editing'
 import type { PropsWithChildren } from 'react'
 import { ReactTempus } from 'tempus/react'
 import { PerformanceMonitor } from '~/components/performance-monitor'
 import { RoutePerformanceTracker } from '~/components/performance-monitor/route-tracker'
 import { RealViewport } from '~/components/real-viewport'
-import { DisableDraftMode } from '~/integrations/sanity/components/disable-draft-mode'
+// import { DisableDraftMode } from '~/integrations/sanity/components/disable-draft-mode'
 import { OrchestraTools } from '~/orchestra'
 import AppData from '~/package.json'
 import { themes } from '~/styles/colors'
@@ -15,7 +15,7 @@ import '~/styles/css/index.css'
 
 import { GSAPRuntime } from '~/components/gsap/runtime'
 import { isSanityConfigured } from '~/integrations/check-integration'
-import { SanityLive } from '~/integrations/sanity/live'
+// import { SanityLive } from '~/integrations/sanity/live'
 import { fontsVariable } from '~/styles/fonts'
 
 const APP_NAME = AppData.name
@@ -125,15 +125,15 @@ export default async function Layout({ children }: PropsWithChildren) {
         <ReactTempus patch={!isDraftMode} />
 
         {/* Visual editing - only in draft mode and if Sanity is configured */}
-        {sanityConfigured && isDraftMode && (
+        {/* {sanityConfigured && isDraftMode && (
           <>
             <VisualEditing />
             <DisableDraftMode />
           </>
-        )}
+        )} */}
 
         {/* Sanity Live - only if Sanity is configured */}
-        {sanityConfigured && <SanityLive />}
+        {/* {sanityConfigured && <SanityLive />} */}
 
         {/* Analytics - loads async, non-blocking */}
         {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
